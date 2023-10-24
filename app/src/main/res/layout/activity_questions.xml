@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EDF3FC"
+    tools:context=".QuestionsActivity">
+
+    <LinearLayout
+        android:id="@+id/top_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/design_default_color_primary"
+        android:elevation="5dp"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tv_quesID"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1/25"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold">
+
+        </TextView>
+        <TextView
+            android:id="@+id/tv_timer"
+            android:layout_weight="1"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/green"
+            android:text="20 : 15 min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        </TextView>
+        <Button
+            android:id="@+id/submitB"
+            android:textColor="@color/white"
+            android:backgroundTint="@android:color/holo_orange_light"
+           android:layout_weight="1"
+            android:background="@drawable/buuton_border"
+            android:text="Submit"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp">
+
+        </Button>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="12dp"
+        android:background="@color/design_default_color_primary_dark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top_bar"
+
+        >
+        <TextView
+            android:id="@+id/qa_catName"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GK"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            >
+        </TextView>
+        <ImageView
+            android:id="@+id/qa_bookmarkB"
+            android:layout_weight="1"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_bookmark"
+            >
+        </ImageView>
+
+        <ImageView
+            android:id="@+id/ques_list_gridB"
+            android:src="@drawable/ic_right_menu"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></ImageView>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:id="@+id/ll3"
+        android:gravity="center"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/design_default_color_primary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+        <ImageButton
+            android:id="@+id/prev_quesB"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="24dp"
+            android:background="@color/design_default_color_primary_dark"
+            app:srcCompat="@drawable/ic_lleft"></ImageButton>
+
+        <Button
+            android:id="@+id/clear_selB"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:text="Clear Selection"
+            android:textColor="@color/white"
+            android:background="@drawable/buuton_border"
+
+            >
+        </Button>
+
+        <Button
+            android:id="@+id/markB"
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginLeft="8dp"
+            android:text="Mark for Review"
+            android:textColor="@color/white"
+            android:background="@drawable/buuton_border"
+
+            >
+        </Button>
+
+        <ImageButton
+            android:id="@+id/next_quesB"
+            android:layout_width="30dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:background="@color/design_default_color_primary_dark"
+            app:srcCompat="@drawable/ic_rright"></ImageButton>
+
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/questions_view"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/ll3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll4"
+        >
+
+
+    </androidx.recyclerview.widget.RecyclerView>
+    <ImageView
+
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/mark_image"
+        android:src="@drawable/marked_text"
+        android:elevation="5dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll4"
+        android:visibility="gone"
+
+
+        ></ImageView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
