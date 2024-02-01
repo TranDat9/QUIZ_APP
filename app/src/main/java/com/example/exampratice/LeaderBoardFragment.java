@@ -61,6 +61,7 @@ public class LeaderBoardFragment extends Fragment {
         DataBase.getTopUsers(new MyCompleteListener() {
             @Override
             public void onSucces() {
+
                 adapter.notifyDataSetChanged();
                 if(DataBase.myperformance.getScore()!=0)
                 {
@@ -69,7 +70,7 @@ public class LeaderBoardFragment extends Fragment {
                         calculateRank();
                     }
                     myScoreTV.setText("Score : " +DataBase.myperformance.getScore());
-                    myRankTV.setText("Rank - "+DataBase.myperformance.getRank());
+                    myRankTV.setText("Rank : " +DataBase.myperformance.getRank());
                 }
 
                 prgressDialog.dismiss();
@@ -95,7 +96,7 @@ public class LeaderBoardFragment extends Fragment {
            int rank;
            if(lowTopScore != myperformance.getScore())
            {
-               rank = g_usersCount -myslot;
+               rank = g_usersCount - myslot;
            }else {
                rank=21;
            }

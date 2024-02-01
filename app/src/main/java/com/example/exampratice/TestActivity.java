@@ -46,10 +46,12 @@ public class TestActivity extends AppCompatActivity {
         linearLayoutManager.setOrientation(RecyclerView.VERTICAL);
         testview.setLayoutManager(linearLayoutManager);
 
+        // Load TEst Data
+
           DataBase.loadTestData(new MyCompleteListener() {
               @Override
               public void onSucces() {
-                /*  DataBase.loadMyScores(new MyCompleteListener() {
+                 DataBase.loadMyScores(new MyCompleteListener() {
                       @Override
                       public void onSucces() {
                           adapter = new TestAdapter(DataBase.g_testList);
@@ -63,10 +65,7 @@ public class TestActivity extends AppCompatActivity {
                           Toast.makeText(TestActivity.this,"wrong!",Toast.LENGTH_LONG).show();
                       }
                   });
-*/
-                  adapter = new TestAdapter(DataBase.g_testList);
-                  testview.setAdapter(adapter);
-                  prgressDialog.dismiss();
+
               }
 
               @Override
@@ -75,17 +74,7 @@ public class TestActivity extends AppCompatActivity {
                   Toast.makeText(TestActivity.this,"wrong!",Toast.LENGTH_LONG).show();
               }
           });
-
-
-
-
-
-
-
     }
-
-
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == android.R.id.home)

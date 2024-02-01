@@ -107,8 +107,8 @@ public class AccountFragment extends Fragment {
        }
        else {
            score.setText("Score : " +DataBase.myperformance.getScore());
-           if(myperformance.getScore()!=0)
-           rank.setText("Rank - "+DataBase.myperformance.getRank());
+           if(myperformance.getScore()!=0) rank.setText("Rank - " + DataBase.myperformance.getRank());
+
        }
 
         logoutB.setOnClickListener(new View.OnClickListener() {
@@ -152,7 +152,7 @@ public class AccountFragment extends Fragment {
         laederB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-             bottomNavigationView.setSelectedItemId(R.id.navigation_leader);
+             bottomNavigationView.setSelectedItemId(R.id.bottomnavigation_leader);
             }
         });
         return view;
